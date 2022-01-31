@@ -1,0 +1,14 @@
+.img-container{
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+    min-height: 160px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container>img{
+    min-width: 100%;
+    min-height: 100%;
+}

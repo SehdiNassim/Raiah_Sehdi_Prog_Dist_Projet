@@ -1,0 +1,86 @@
+.menu {
+    padding: 32px 0;
+    min-height: 100%;
+    height: auto;
+    background-color: white;
+    width: 100px;
+    transition: .1s all ease-in;
+    -webkit-transition: .1s all ease-in;
+    -moz-transition: .1s all ease-in;
+    -ms-transition: .1s all ease-in;
+    -o-transition: .1s all ease-in;
+    gap: 48px 0;
+}
+
+.menu.open {
+    width: 400px;
+}
+
+.menu-primary-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 32px;
+}
+
+.menu-primary-item * {
+    color: inherit;
+    pointer-events: none;
+}
+
+.menu-accordion {
+    padding: 0 32px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: .2s all ease-in;
+    -webkit-transition: .2s all ease-in;
+    -moz-transition: .2s all ease-in;
+    -ms-transition: .2s all ease-in;
+    -o-transition: .2s all ease-in;
+}
+
+.menu-accordion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 24px;
+}
+
+.menu-secondary-item {
+    padding: 8px 24px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+}
+
+.menu-secondary-item.active {
+    background-color: var(--secondary-green);
+}
+
+.closed-menu-item {
+    padding: 0 32px;
+    padding-left: 28px;
+    border-left: 4px solid white;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    /* justify-content: center; */
+}
+
+.closed-menu-item * {
+    color: inherit;
+}
+
+.closed-menu-item.active {
+    color: var(--secondary-blue2);
+    border-left: 4px solid var(--secondary-blue2);
+}

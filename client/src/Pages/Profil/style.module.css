@@ -1,0 +1,29 @@
+.profile-pic-container{
+    height: 120px;
+    width: 120px;
+    margin-right: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--grey) solid;
+}
+.profile-pic-container>img{
+    min-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width:768px){
+    .profile-pic-container{
+        width: 90px;
+        height: 90px;
+        margin-right: 32px;
+    }
+}

@@ -1,0 +1,28 @@
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 0 12px;
+}
+
+.pagination-item{
+    height: 32px;
+    width: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--grey) solid;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    cursor: pointer;
+}
+.pagination-item.selected{
+    border: 1px var(--primary-green) solid;
+    color: var(--primary-green);
+}
+.pagination .disabled{
+    pointer-events: none;
+}

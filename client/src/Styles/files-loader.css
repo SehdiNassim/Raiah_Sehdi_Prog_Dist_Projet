@@ -1,0 +1,56 @@
+.bars-loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--popup-background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--files-loader-z-index);
+}
+
+.bars-loader {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 120px;
+}
+
+.bars-loader div {
+    display: inline-block;
+    position: absolute;
+    width: 24px;
+    background: var(--secondary-blue2);
+    animation: bars-loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    -webkit-animation: bars-loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.bars-loader div:nth-child(1) {
+    left: 0;
+    animation-delay: -0.24s;
+}
+
+.bars-loader div:nth-child(2) {
+    left: 38px;
+    animation-delay: -0.12s;
+}
+
+.bars-loader div:nth-child(3) {
+    left: 76px;
+    animation-delay: 0;
+}
+
+@keyframes bars-loader {
+    0% {
+        top: 8px;
+        height: 100%;
+    }
+
+    50%, 100% {
+        top: 24px;
+        height: 50%;
+    }
+}

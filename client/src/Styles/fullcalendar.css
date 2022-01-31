@@ -1,0 +1,16 @@
+.fc-daygrid-day, .fc-day-today {
+    background-color: var(--background-color) !important;
+}
+.fc-day-disabled {
+    background-color: var(--disabled-grey) !important;
+}
+.fc-daygrid-day-top{
+    padding-left: 8px;
+    flex-direction: row !important;
+}
+.fc-bg-event {
+    background-color:transparent !important;
+    opacity: 1 !important;
+    color: white;
+    z-index: 2 !important;
+}

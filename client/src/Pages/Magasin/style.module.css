@@ -1,0 +1,19 @@
+.img-container{
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.img-container>img{
+    min-width: 100%;
+    min-height: 100%;
+}

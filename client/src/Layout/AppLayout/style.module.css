@@ -1,0 +1,19 @@
+.app-layout{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    padding-top: 90px;
+    position: relative;
+}
+.app-layout-bottom{
+    flex: 1;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.app-layout-content{
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+}

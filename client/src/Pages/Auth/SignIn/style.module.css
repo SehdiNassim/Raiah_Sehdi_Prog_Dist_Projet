@@ -1,0 +1,6 @@
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+    max-width: 500px;
+}

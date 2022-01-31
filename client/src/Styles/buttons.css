@@ -1,0 +1,48 @@
+.default-btn{
+    background-color: var(--secondary-blue2);
+    border: 1px var(--secondary-blue2) solid;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    padding: 16px 24px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all ease;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    -ms-transition: .5s all ease;
+    -o-transition: .5s all ease;
+}
+.default-btn > svg{
+    font-size: 18px;
+}
+.default-btn:disabled{
+    background-color: var(--grey) !important;
+    border: none;
+}
+.default-btn.primary-btn{
+    background-color: transparent;
+    border: 1px var(--secondary-blue2) solid;
+    color: var(--secondary-blue2);
+}
+.default-btn.secondary-btn{
+    background-color: var(--secondary-blue);
+    color: white;
+}
+.default-btn.blue-btn{
+    background-color: transparent;
+    border: 1px var(--secondary-blue) solid;
+    color: var(--secondary-blue);
+}
+.default-btn.danger-btn{
+    background-color: transparent;
+    border: 1px var(--red) solid;
+    color: var(--red);
+}

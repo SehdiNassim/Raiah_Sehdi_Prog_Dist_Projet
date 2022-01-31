@@ -1,0 +1,135 @@
+@import './Typographie.css';
+@import './text-inputs.css';
+@import './buttons.css';
+@import './checkbox.css';
+@import './cards.css';
+@import './radio.css';
+@import './toast.css';
+@import './fullcalendar.css';
+@import './files-loader.css';
+@import './circular-progressbar.css';
+@import './icon-container.css';
+
+:root{
+    --primary-font-color:#0E0E2C;
+    --primary-green: #048C74;
+    --secondary-green:rgba(4, 140, 115, 0.01);
+    --secondary-green: #9BD1C7;
+    --secondary-blue:#4C6FFF;
+    --secondary-blue2:#4C6FFF;
+    --red:#CC444B;
+    --grey:#B1B1B1;
+    --grey-2:#E2E2E2;
+    --grey-3: rgba(35, 41, 49,.2);
+    --background-color:#F6F8FA;
+    --disabled-grey:#E0E0E0;
+    --grey-background-color:#EDF2F7;
+    --popup-background-color: rgba(14, 14, 44, 0.25);
+
+    --navbar-z-index:999;
+    --navbar-mobile-menu-z-index:1000;
+    --notifications-z-index:1001;
+    --popup-z-index:1002;
+    --files-loader-z-index:9999
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    color: var(--primary-font-color);
+    background-color: var(--background-color);
+    height: 100%;
+}
+
+#root {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    color: inherit;
+    letter-spacing: 0px;
+    scroll-behavior: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+}
+a:hover{
+    color: initial;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.wow-logo{
+    height: 24px;
+    width: fit-content;
+}
+
+.progress-bar-container{
+    background-color: var(--grey-2);
+    flex: 1;
+    height: 16px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+.progress-bar-progress{
+    background-color: var(--secondary-blue2);
+    height: 16px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.disponible{
+    fill: var(--secondary-blue2);
+    color: var(--secondary-blue2);
+}
+.indisponible{
+    fill: var(--grey);
+    color: var(--grey);
+}
+.lastname{
+    text-transform: uppercase;
+}
+.firstname{
+    text-transform: lowercase capitalize;
+}
+.liked{
+    fill:var(--red) !important;
+    color: var(--red);
+}
+
+@media (max-width: 1200px){
+    #root{
+        display: none;
+    }
+}

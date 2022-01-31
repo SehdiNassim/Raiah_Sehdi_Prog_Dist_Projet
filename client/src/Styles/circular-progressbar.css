@@ -1,0 +1,13 @@
+.CircularProgressbar-path {
+    stroke: var(--secondary-blue2) !important;
+}
+
+.CircularProgressbar-trail {
+    stroke: var(--grey-2) !important;
+}
+
+.CircularProgressbar-text {
+    fill: var(--primary-font-color) !important;
+    font-family: 'Poppins' !important;
+    font-size: 16px !important;
+}
