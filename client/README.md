@@ -7,19 +7,19 @@ Une fois le projet téléchargé, il faudra configurer l'environement de travail
 :warning: **Il faut éxécuter le tout dans un systeme Linux**
 - Créer l'image docker du frontend: 
 ```bash
-  sudo docker build -t Sehdi-Raiah-Frontend ./client
+  sudo docker build -t sehdi-raiah-frontend ./client
 ```
 - Créer l'image docker du backend: 
 ```bash
-  sudo docker build -t Sehdi-Raiah-Backend ./server
+  sudo docker build -t sehdi-raiah-backend ./server
 ```
 - Lancer un container du frontend (Il s'exécutera dans http://localhost, il faut vérifier qu'aucun programme n'est lancé dans http://localhost): 
 ```bash
-  sudo docker run --network="host" -d Sehdi-Raiah-Frontend
+  sudo docker run --network="host" -d sehdi-raiah-frontend
 ```
 - Lancer un container du backend (Il s'exécutera dans http://localhost:9000, il faut vérifier qu'aucun programme n'est lancé dans http://localhost:9000), les fichiers téléchargés se trouveront dans le chemin XXXX qu'il faut spécifier dans la commande: 
 ```bash
-  sudo docker run -p 9000:9000 -v XXXX:/src/uploads -d Sehdi-Raiah-Backend
+  sudo docker run -p 9000:9000 -v XXXX:/src/uploads -d sehdi-raiah-backend
 ```
 - Une fois les commandes précédentes exécutées, le projet sera accessible dans http://localhost
 
