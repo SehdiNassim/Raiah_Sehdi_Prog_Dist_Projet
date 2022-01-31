@@ -64,7 +64,7 @@ const getCartByUser = async (idUser) => {
         __v:0
     }, {
         populate :"idProduct",
-    });
+    }).clone();
     return cart;
   }
   catch (err) {

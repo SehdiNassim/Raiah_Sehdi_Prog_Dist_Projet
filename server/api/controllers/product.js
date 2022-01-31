@@ -67,7 +67,7 @@ module.exports.getProductsByUserByShop = async (req, res) => {
           products
         });
       }
-  );
+  ).clone();
 };
 
 module.exports.getProductsDashboard = async (req, res) => {
@@ -299,7 +299,7 @@ module.exports.deleteProductsByShop = async (idShop) => {
   await Product.updateMany({idShop}, {status : productStatusKeys[1]});
   const products = await Product.find({idShop}, {
     _id:1
-  });
+  }).clone();
   products.forEach(async product => {
     await deleteCartItemsOfProduct(product._id);
   });

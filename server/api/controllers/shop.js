@@ -33,7 +33,7 @@ module.exports.getShop = async (req, res) => {
 
 module.exports.getShopByUser = async (req, res) => {
   const idUser = req.tokenData.authId;
-  const shops = await Shop.find({idUser});
+  const shops = await Shop.find({idUser}).clone();
   return res.status(200).json({
       status: Success.SUCCESS,
       message: Success.FETCHED_SHOP_DATA,

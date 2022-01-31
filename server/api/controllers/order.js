@@ -60,7 +60,7 @@ module.exports.getOrderByUser = async (req, res) => {
     populate : {
         path : "products.idProduct",
     }
-});
+}).clone();
   return res.status(200).json({
       status: Success.SUCCESS,
       message: Success.FETCHED_ORDER_DATA,
