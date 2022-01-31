@@ -135,13 +135,13 @@ module.exports.initServer = (app) => {
     if (err) {
 
       // server run failed
-      console.log(`Failed to listen on port ${process.env.CONSULTANT_API_PORT}`);
+      console.log(`Failed to listen on port ${process.env.PORT}`);
       console.error(err);
       process.exit(1);
     } else {
 
       // server run success
-      console.log(`Listening on port ${process.env.CONSULTANT_API_PORT}`);
+      console.log(`Listening on port ${process.env.PORT}`);
     }
   });
 };
