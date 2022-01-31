@@ -9,7 +9,7 @@ const CartCard = ({ product, onDelete }) => {
         <div className='d-flex flex-row gap-2'>
             <div className={`${style['img-container']}`}>
                 {
-                    product.profileURL ? <img src={product.productURL} alt="product img" />
+                    product.productURL ? <img src={product.productURL} alt="product img" />
                         : <FiShoppingBag className='header-1' />
                 }
             </div>
