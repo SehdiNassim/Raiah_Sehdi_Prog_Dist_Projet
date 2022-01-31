@@ -30,7 +30,7 @@ module.exports.userEditValidation = (data) => {
     birthDate: Joi.string().allow(""),
     location: {
       address: Joi.string().allow(""),
-      zip: Joi.string().allow(""),
+      zip: Joi.string().number().allow(""),
       city: Joi.string().allow(""),
     },
     phoneNumber: Joi.string().allow(""),

@@ -3,7 +3,6 @@ const JWTHandler = require("../../core/jwt");
 const Headers = require("../utils/constants").headers;
 const Errors = require("../utils/constants").errors;
 const Success = require("../utils/constants").success;
-const AccountConstants = require("../utils/constants").account;
 const UserControllers = require("./user");
 const {hashThePassword} = require('../../core/helpers');
 const { default: Axios } = require("axios");
@@ -123,45 +122,6 @@ module.exports.refreshAccessToken = async (req,res)=>{
       });
 };
 
-module.exports.updatePassword = async (req, res) => {
-  const hashedOldPassword = await _hashThePassword(req.body.oldPass);
-
-  var authUser = await _getAuthUser(req.tokenData.authId, hashedOldPassword);
-
-  if (!authUser)
-    return res
-      .status(400)
-      .json({ status: Errors.FAILED, message: Errors.USER_NOT_EXISTS });
-
-  const hashedNewPassword = await _hashThePassword(req.body.newPass);
-
-  if (hashedNewPassword===hashedOldPassword)
-    return res.status(400).json({
-      status: Errors.FAILED,
-      message: Errors.OLD_PASSWORD_IS_SAME,
-    });
-
-  authUser.password = hashedNewPassword;
-console.log(authUser);
-  await authUser.save(async (error, savedUser) => {
-    if (savedUser)
-      return res.status(200).json({
-        status: Success.SUCCESS,
-        message: Success.PASSWORD_UPDATED,
-      });
-
-    // Print the error and sent back failed response
-    console.log(error);
-    return res.status(403).json({
-      status: Errors.FAILED,
-      message: Helpers.joinWithCommaSpace(
-        Errors.PASSWORD_CHANGE_FAILED,
-        Errors.TRY_LATER
-      ),
-    });
-  });
-};
-
 async function loginUser(authUser, res) {
   authUser = await _createNewRefreshTokenIfAboutToExpire(authUser);
 
@@ -225,43 +185,6 @@ function verifyRefreshToken(refreshToken) {
 module.exports.verifyAccessToken = (refreshToken) => {
   return JWTHandler.verifyAccessToken(refreshToken);
 };
-
-module.exports.getAuthConsultantWithProjection = async (authId, project)  => {
-  const consultant = await Auth.findOne({
-    _id: authId, 
-    role : AccountConstants.accRoles.consultant
-  }, 
-  project);
-  return consultant;
-};
-
-module.exports.getAuthAdminWithProjection = async (authId, project)  => {
-  const admin = await Auth.findOne({
-    _id: authId, 
-    role : AccountConstants.accRoles.admin
-  }, 
-  project);
-  return admin;
-};
-
-module.exports.getAuthWithProjection = async (authId, project)  => {
-  const auth = await Auth.findOne({
-    _id: authId, 
-  }, 
-  project);
-  return auth;
-};
-
-async function _getAuthUser(authId, pass) {
-  const authUser = await Auth.findOne({
-    _id :authId,
-    password :pass
-  }, {
-    createdAt: 0,
-    updatedAt: 0,
-  });
-  return authUser;
-}
 
 module.exports.loginWithGoogle = async (req, res) => {
   // sending access token to server to verify if the token is valid and return the data

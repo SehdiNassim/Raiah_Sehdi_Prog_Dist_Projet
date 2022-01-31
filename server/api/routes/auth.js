@@ -42,6 +42,18 @@ router.get("/token/verify",
   }
 );
 
+//Refresh Access Token
+router.get("/token/refresh",
+  AuthMiddlewares.checkRefreshToken,
+  AuthMiddlewares.validateRefreshToken,
+  async (req, res) => {
+    try {
+      await AuthControllers.refreshAccessToken(req, res);
+    } catch (error) {
+      internalServerError(res, error);
+    }
+  }
+);
 
 router.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
